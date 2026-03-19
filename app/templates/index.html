@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banco teste</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/global.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}">
+    <title>Home</title>
 </head>
-<body>
-    <h1>Bem-vindo, {{ nome }}</h1>
-    <p>Seu saldo: R$ {{ saldo }}</p>
+<body class="body">
+    <h1>Olá, {{ nome }}</h1>
+
+    <div class="conteudo-1">
+        <p id="p-home">Saldo em conta : 
+        <strong>R$ {{ "%.2f"|format(saldo)|replace('.', ',') }}</strong></p>
+
+        <p>Limite de crédito : 
+        <strong>R$ {{ "%.2f"|format(limite)|replace('.', ',') }}</strong></p>
+        <div class="operacoes">
+            <a class="button-operacoes" href="{{ url_for('conta.depositar') }}">
+                Depositar
+            </a>
+            <a class="button-operacoes" href="{{ url_for('conta.sacar') }}">
+                Sacar
+            </a>
+            <a class="button-operacoes">Transferir</a>
+            <a class="button-operacoes">Historico</a>
+        </div>
+    </div>
     
-
-    <a href="/operacoes">Fazer operação</a>
     <br>
-    <a href="{{ url_for('auth.cadastro') }}">Cadastrar</a>
-
+    <a id="button1" href="{{ url_for('auth.cadastro') }}">Cadastrar</a>
 </body>
 </html>

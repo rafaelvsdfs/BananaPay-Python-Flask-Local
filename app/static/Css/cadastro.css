@@ -1,0 +1,72 @@
+.conteudo-2 {
+    height: 60vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;      /* vertical */
+    justify-content: center;  /* horizontal */
+    flex-direction: column;
+    background-color: #588157;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* vertical */
+    justify-content: center;  /* horizontal */
+}
+
+.input {
+    width: 40vh;
+    height: 5vh;
+    padding: 5px 10px;
+
+    background-color: #344e41;
+    color: #dad7cd;
+
+    border: none;
+    border-radius: 5px;
+
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* placeholder */
+.input::placeholder {
+    color: #dad7cd;
+}
+
+/* hover */
+.input:hover {
+    transform: scale(1.05);
+}
+
+/* quando clica (focus) */
+.input:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px #588157;
+}
+
+#button-cadastrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dad7cd;
+    width: 20vh;
+    height: 5vh;
+    background-color: #344e41;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.15s ease-in-out;
+}
+
+#button-cadastrar:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#button-cadastrar:active {
+    transform: scale(1);
+}

@@ -4,7 +4,9 @@ def create_app():
     app = Flask(__name__)
 
     from app.routes import auth_routes
+    from app.routes import conta_routes  
 
     app.register_blueprint(auth_routes.bp)
+    app.register_blueprint(conta_routes.bp) 
 
     return app

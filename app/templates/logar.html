@@ -6,24 +6,20 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/global.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/cadastro.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}">
-    <title>Cadastro</title>
+    <title>Login</title>
 </head>
 <body>
-    <h1> Cadastro </h1>
+    <h1> Login </h1>
     <div class="conteudo-2">
         <form method="POST">
             <input class="input" type="text" name="nome" placeholder="Nome" required>
             <br>
             <input class="input" type="text" name="cpf" placeholder="CPF" required>
             <br>
-            <input class="input" type="number" name="salario" placeholder="Deseja colocar um saldo ?" required step="0.01">        
-            <br>
-            <input class="input" type="number" name="limite" placeholder="Deseja definir um limite ?" required step="0.01">    
-            <br>
-            <button id="button-cadastrar" type="submit">Cadastrar</button>
+            <button id="button-cadastrar" type="submit">Login</button>
         </form>
     </div>
     <br>
-    <a id="button1" href="{{ url_for('auth.home') }}">Início</a>
+    <a id="button1" href="{{ url_for('auth.cadastro') }}">Cadastrar</a>
 </body>
 </html>

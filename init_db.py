@@ -3,6 +3,7 @@ import sqlite3
 conn = sqlite3.connect("banco.db")
 cursor = conn.cursor()
 
+# Cria tabela de clientes
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS clientes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -11,6 +12,7 @@ CREATE TABLE IF NOT EXISTS clientes (
 )
 """)
 
+# Cria tabela de contas
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS contas (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -21,8 +23,6 @@ CREATE TABLE IF NOT EXISTS contas (
 )
 """)
 
-
 conn.commit()
 conn.close()
-
 print("Banco criado com sucesso")

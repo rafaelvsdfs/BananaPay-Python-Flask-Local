@@ -1,0 +1,11 @@
+.conteudo-3 {
+    height: 40vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;      /* vertical */
+    justify-content: center;  /* horizontal */
+    flex-direction: column;
+    background-color: #588157;
+    border-radius: 20px;
+    font-size: 20px;
+}
