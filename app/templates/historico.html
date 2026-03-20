@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/historico.css') }}">
+    <title>Histórico</title>
+</head>
+<body>
+    <h1>Histórico de Transações</h1>
+<div class="conteudo-1">
+    {% if transacoes %}
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <br>
+                <th>Valor</th>
+                <th>Quem</th>
+                <th>Data</th>
+            </tr>
+        {% for t in transacoes %}
+            <tr class="{% if t[0] == 'transferencia' %}transferencia
+                    {% elif t[0] == 'saque' %}saque
+                    {% elif t[0] == 'deposito' %}deposito{% endif %}">
+                <td>{{ t[0] }}</td>
+                <br>
+                <td>{{ t[1] }}</td>
+                <td>{{ t[2] }}</td>
+                <td>{{ t[3] }}</td>
+            </tr>
+                
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>Nenhuma transação encontrada</p>
+    {% endif %}
+</div>
+<br>
+<a id="button1" href="{{ url_for('auth.home') }}">Voltar</a>
+</body>
+</html>

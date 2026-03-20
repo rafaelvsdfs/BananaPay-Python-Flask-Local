@@ -20,7 +20,7 @@ h1 {
     text-align: center;
 }
 
-.conteudo-3 {
+.conteudo-2 {
     background-color: #3d6b4f;
     border-radius: 16px;
     padding: 2rem;
@@ -28,7 +28,7 @@ h1 {
     max-width: 380px;
 }
 
-.conteudo-3 form {
+.conteudo-2 form {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -54,15 +54,6 @@ h1 {
 
 .input:focus {
     border-color: rgba(255,255,255,0.35);
-}
-
-.input[type=number]::-webkit-inner-spin-button,
-.input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-.input[type=number] {
-    -moz-appearance: textfield;
 }
 
 #button-cadastrar {

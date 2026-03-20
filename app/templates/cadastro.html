@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/global.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/cadastro.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}">
     <title>Cadastro</title>
@@ -11,10 +10,11 @@
 <body>
     <h1> Cadastro </h1>
     <div class="conteudo-2">
-        <form method="POST">
+        <form id="formCadastro" method="POST">
             <input class="input" type="text" name="nome" placeholder="Nome" required>
             <br>
-            <input class="input" type="text" name="cpf" placeholder="CPF" required>
+            <input class="input" type="text" name="cpf" id="cpf" placeholder="CPF" required>
+            <span id="erro-cpf" style="color:red; display:none;">CPF inválido</span>
             <br>
             <input class="input" type="number" name="salario" placeholder="Deseja colocar um saldo ?" required step="0.01">        
             <br>
@@ -24,6 +24,46 @@
         </form>
     </div>
     <br>
-    <a id="button1" href="{{ url_for('auth.home') }}">Início</a>
+    <a id="button1" href="{{ url_for('auth.login') }}">Voltar</a>
+
+    <script>
+    function validarCPF(cpf) {
+        cpf = cpf.replace(/[^\d]+/g,'');
+        if(cpf.length !== 11) return false;
+        if (/^(\d)\1+$/.test(cpf)) return false;
+
+        let soma = 0;
+        for (let i = 0; i < 9; i++) {
+            soma += parseInt(cpf.charAt(i)) * (10 - i);
+        }
+        let resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(9))) return false;
+
+        soma = 0;
+        for (let i = 0; i < 10; i++) {
+            soma += parseInt(cpf.charAt(i)) * (11 - i);
+        }
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(10))) return false;
+
+        return true;
+    }
+
+    // Garante que o DOM já carregou
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('formCadastro');
+        form.addEventListener('submit', function(e) {
+            const cpfInput = document.getElementById('cpf').value;
+            if (!validarCPF(cpfInput)) {
+                e.preventDefault();
+                document.getElementById('erro-cpf').style.display = 'inline';
+            } else {
+                document.getElementById('erro-cpf').style.display = 'none';
+            }
+        });
+    });
+</script>
 </body>
 </html>

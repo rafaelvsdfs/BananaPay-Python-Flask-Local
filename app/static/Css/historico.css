@@ -1,0 +1,110 @@
+/* =============================================
+   HISTÓRICO DE TRANSAÇÕES — estilos visuais
+   Adicione no seu CSS existente (ex: depositar.css ou um novo historico.css)
+   Não altera nenhuma classe, id ou estrutura do HTML
+   ============================================= */
+
+body {
+    background-color: #2f4035;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    min-height: 100vh;  /* ← troca por: */
+    height: auto;       /* ← isso aqui */
+    margin: 0;
+}
+
+h1 {
+    color: #d4e6c3;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.conteudo-1 {
+    position: relative;
+    top: 0;
+    background-color: #3d6b4f;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+}
+
+/* Tabela */
+.conteudo-1 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.conteudo-1 th {
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #b8d4a8;
+    padding: 0 14px 12px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.conteudo-1 td {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    color: #e8f5e0;
+}
+
+.conteudo-1 tr + tr td {
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.conteudo-1 tbody tr:hover td {
+    background-color: rgba(255,255,255,0.05);
+}
+
+/* Cores por tipo de transação */
+.conteudo-1 tr.deposito td:first-child {
+    color: #6fcf5a;
+    font-weight: 600;
+}
+
+.conteudo-1 tr.saque td:first-child {
+    color: #f08080;
+    font-weight: 600;
+}
+
+.conteudo-1 tr.transferencia td:first-child {
+    color: #7eb8f7;
+    font-weight: 600;
+}
+
+/* Mensagem sem transações */
+.conteudo-1 p {
+    color: #b8d4a8;
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 0.95rem;
+}
+
+/* Botão voltar */
+#button1 {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 10px 36px;
+    background-color: #3d6b4f;
+    color: #d4e6c3;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+#button1:hover {
+    background-color: #4a7d5e;
+    border-color: rgba(255,255,255,0.25);
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/cadastro.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/depositar.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}">
+    <title>Transferência</title>
+</head>
+<body>
+    <h1> Transferir </h1>
+    <div class="conteudo-3">
+        <form method="POST">
+            <input class="input" type="text" name="cpf_destino" placeholder=" CPF do destinatario" required step="0.01">
+            <br>
+            <input class="input" type="number" name="valor" placeholder="Valor da transferência" required step="0.01">
+            <br>
+            <button id="button-cadastrar" type="submit">Enviar</button>
+        </form>
+    </div>
+    <br>
+    <a id="button1" href="{{ url_for('auth.home') }}">Início</a>
+</body>
+</html>

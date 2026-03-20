@@ -1,72 +1,109 @@
-.conteudo-2 {
-    height: 60vh;
-    width: 30vw;
+body {
+    background-color: #2f4035;
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
-    align-items: center;      /* vertical */
-    justify-content: center;  /* horizontal */
     flex-direction: column;
-    background-color: #588157;
-    border-radius: 20px;
-    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
 
-form{
+h1 {
+    color: #d4e6c3;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.conteudo-2 {
+    background-color: #3d6b4f;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 380px;
+}
+
+.conteudo-2 form {
     display: flex;
     flex-direction: column;
-    align-items: center;      /* vertical */
-    justify-content: center;  /* horizontal */
+    gap: 12px;
 }
 
 .input {
-    width: 40vh;
-    height: 5vh;
-    padding: 5px 10px;
-
-    background-color: #344e41;
-    color: #dad7cd;
-
-    border: none;
-    border-radius: 5px;
-
+    width: 100%;
+    padding: 10px 14px;
+    background-color: #2f4035;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    color: #e8f5e0;
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', sans-serif;
     outline: none;
-    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    transition: border-color 0.15s;
 }
 
-/* placeholder */
 .input::placeholder {
-    color: #dad7cd;
+    color: #7a9e7e;
 }
 
-/* hover */
-.input:hover {
-    transform: scale(1.05);
-}
-
-/* quando clica (focus) */
 .input:focus {
-    transform: scale(1.05);
-    box-shadow: 0 0 5px #588157;
+    border-color: rgba(255,255,255,0.35);
+}
+
+/* Remove setas do input number */
+.input[type=number]::-webkit-inner-spin-button,
+.input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#erro-cpf {
+    font-size: 0.8rem;
+    margin-top: -6px;
 }
 
 #button-cadastrar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #dad7cd;
-    width: 20vh;
-    height: 5vh;
-    background-color: #344e41;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: transform 0.15s ease-in-out;
+    margin-top: 4px;
+    padding: 10px;
+    background-color: #2f4035;
+    color: #d4e6c3;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: 'Segoe UI', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
 }
 
 #button-cadastrar:hover {
-    transform: scale(1.2);
-    cursor: pointer;
+    background-color: #253329;
+    border-color: rgba(255,255,255,0.25);
 }
 
-#button-cadastrar:active {
-    transform: scale(1);
+#button1 {
+    display: block;
+    margin-top: 1.25rem;
+    padding: 10px 36px;
+    background-color: #3d6b4f;
+    color: #d4e6c3;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background-color 0.15s, border-color 0.15s;
+    width: fit-content;
+}
+
+#button1:hover {
+    background-color: #4a7d5e;
+    border-color: rgba(255,255,255,0.25);
 }

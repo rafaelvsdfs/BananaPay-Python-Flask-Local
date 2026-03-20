@@ -8,7 +8,7 @@ cursor.execute("""
 CREATE TABLE IF NOT EXISTS clientes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
-    cpf TEXT NOT NULL
+    cpf TEXT NOT NULL UNIQUE
 )
 """)
 
@@ -22,6 +22,19 @@ CREATE TABLE IF NOT EXISTS contas (
     FOREIGN KEY(cliente_id) REFERENCES clientes(id)
 )
 """)
+
+# Cria tabela de transações
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS transacoes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cliente_id INTEGER NOT NULL,
+    tipo TEXT NOT NULL,        -- 'deposito', 'saque', 'transferencia'
+    valor REAL NOT NULL,
+    destinatario_id INTEGER,   -- NULL se não houver
+    data TEXT DEFAULT CURRENT_TIMESTAMP
+)
+""")
+
 
 conn.commit()
 conn.close()

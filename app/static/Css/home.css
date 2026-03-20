@@ -1,0 +1,105 @@
+/* =============================================
+   HOME — estilos visuais
+   Linkar no <head>:
+   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/home.css') }}">
+   ============================================= */
+
+body {
+    background-color: #2f4035;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    height: auto;
+    margin: 0;
+}
+
+h1 {
+    color: #d4e6c3;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.conteudo-1 {
+    background-color: #3d6b4f;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.conteudo-1 p {
+    color: #b8d4a8;
+    font-size: 1rem;
+    margin: 0 0 0.75rem 0;
+}
+
+.conteudo-1 p strong {
+    color: #e8f5e0;
+    font-weight: 600;
+}
+
+#p-home {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Botões de operação */
+.operacoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.button-operacoes {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 10px 16px;
+    background-color: #2f4035;
+    color: #d4e6c3;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.button-operacoes:hover {
+    background-color: #253329;
+    border-color: rgba(255,255,255,0.25);
+}
+
+/* Botão sair */
+#button1 {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 10px 36px;
+    background-color: #3d6b4f;
+    color: #d4e6c3;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background-color 0.15s, border-color 0.15s;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+}
+
+#button1:hover {
+    background-color: #4a7d5e;
+    border-color: rgba(255,255,255,0.25);
+}
